@@ -1,0 +1,74 @@
+{
+	"name": "Helpsystems Data Security Office Add-in Orchestration",
+    "version": "0.1.0",
+    "Products":[
+        {
+            "Name":"Classification",
+            "serviceUrl": "https://localhost:3000/Classification",
+            "controlDisplayOrder": 1,
+            "readControlsUrl":"https://localhost:3002/readpane.html",
+            "taskpaneControlsUrl": "https://localhost:3002/taskpane.html",
+            "controlsVisibility" : [ "Read" , "Compose" , "Reply", "Calendar"],
+            "eventsList": [
+            {
+                "event" : "onSend",
+                "EventNameToMatch":"officeAddinonSend",
+                "eventOrder": 1,
+                "eventUrl": "https://localhost:3002/commands.js",
+                "onError": "Stop"        
+            },
+            {
+                "event" : "onCompose",
+                "eventOrder": 2,
+                "eventUrl": "https://localhost:3450/Classification/onCompose",
+                "onError": "Continue"        
+            },
+            {
+                "event" : "onAttach",
+                "eventOrder": 1,
+                "eventUrl": "https://localhost:3450/Classification/onAttach",
+                "onError": "Continue"        
+            }]
+        },
+        {
+            "Name":"FileTransfer",
+            "serviceUrl": "https://localhost:3450/FileTransfer",
+            "controlDisplayOrder": 2,
+            "controlsUrl": "https://localhost:3450/FileTransfer/Controls",
+            "readControlsUrl":"https://localhost:3004/readpane.html",
+            "taskpaneControlsUrl": "https://localhost:3004/taskpane.html",
+            "controlsVisibility" : [ "Compose" , "Reply", "Calendar"],
+            "eventsList": [
+            {
+                "event" : "onSend",
+                "EventNameToMatch":"onSendMFT",
+                "eventOrder": 3,
+                "eventUrl": "https://localhost:3004/commands.js",
+                "onError": "Continue"        
+            }]       
+        },
+        {
+            "Name": "Vera",
+            "serviceUrl": "https://localhost:3450/Vera",
+            "controlDisplayOrder": 3,
+            "controlsUrl": "https://localhost:3450/Vera/Controls",
+            "readControlsUrl":"https://localhost:3003/readpane.html",
+            "taskpaneControlsUrl": "https://localhost:3003/taskpane.html",
+            "controlsVisibility" : [ "Read" , "Compose" , "Reply", "Calendar"],
+            "eventsList": [
+            {
+                "event" : "onSend",
+                "EventNameToMatch":"VeraonSend",
+                "eventOrder": 2,
+                "eventUrl": "https://localhost:3003/commands.js",
+                "onError": "Continue"        
+            },
+            {
+                "event" : "onOpen",
+                "eventOrder": 1,
+                "eventUrl": "https://localhost:3450/Vera/Decrypt",
+                "onError": "Continue"        
+            }]            
+        }
+    ]	
+}
