@@ -1,0 +1,2 @@
+(()=>{function e(e){e.status===Office.AsyncResultStatus.Succeeded?document.getElementById("classification").innerText="Classification: "+e.value.match(/x-hs-customheaders:.*/gim)[0].slice(19):console.log("Error getting preferences from header: "+JSON.stringify(e.error))}Office.onReady((function(t){t.host===Office.HostType.Outlook&&$(document).ready((function(){Office.context.mailbox.item.getAllInternetHeadersAsync(e)}))}))})();
+//# sourceMappingURL=readpane.js.map

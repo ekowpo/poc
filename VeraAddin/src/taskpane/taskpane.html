@@ -1,0 +1,36 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<html>
+  <head></head>
+  <body>
+    <script defer src="https://localhost:3003/taskpane.js"></script>
+    <div id = 'ControlPane'>
+      <div >
+        <div>Select Policy:</div>
+        <fieldset>
+          <input type="radio" id="None" name="Policy" value="None">
+        <label for="None">None</label><br/>
+        <input type="radio" id="Track" name="Policy" value="Track">
+        <label for="Track">Track</label><br/>
+        <input type="radio" id="Collaborate" name="Policy" value="Collaborate">
+        <label for="Track">Collaborate</label><br/>
+        <input type="radio" id="ViewOnly" name="Policy" value="View Only">
+        <label for="ViewOnly">View Only</label><br/>
+        <input type="radio" id="FullLockDown" name="Policy" value="Full LockDown">
+        <label for="FullLockDown">Full LockDown</label><br>
+        </fieldset>
+      
+        <p>Unsecure attachment:</p>
+        <input type="checkbox" id="Unsecure" name="Unsecure" value="Unsecure">
+        <label for="Unsecure"> Unsecure attachment(s)</label><br>
+        <div style="margin: 8; font-size: x-small;">
+            <span> When checked, this setting would disable Secure and Advance setting tab</span>
+        </div>
+
+    </div>
+  </body>
+</html>
