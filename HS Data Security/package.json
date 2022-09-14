@@ -22,7 +22,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "core-js": "^3.9.1",
-    "msal": "^1.3.2",
+    "msal": "^1.4.17",
     "node-fetch": "^2.6.1",
     "office-addin-sso": "^1.1.2",
     "regenerator-runtime": "^0.13.7"
